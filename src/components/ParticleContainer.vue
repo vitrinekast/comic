@@ -123,7 +123,7 @@
 <template>
 	<vue-particles
 		id="tsparticles"
-		@particles-loaded="particlesLoaded"
+		ref="el"
 		:options="options"
-		ref="el" />
+		@particles-loaded="particlesLoaded" />
 </template>

@@ -43,9 +43,9 @@
 				class="cell--w-3"
 				mask="ch-1-p-1_frame_5b-3"
 				outline="ch-1-p-1_frame_5b-3"
+				type="hoverable"
 				@mouseover="onBird"
-				@mouseleave="showBirdAway = false"
-				type="hoverable">
+				@mouseleave="showBirdAway = false">
 				<img
 					src="@assets/ch-1-p-1_frame_5b-3/frame_asset.webp"
 					alt=""
@@ -53,9 +53,9 @@
 
 				<Transition name="fade-asset">
 					<img
+						v-if="showBirdAway"
 						src="@assets/ch-1-p-1_frame_5b-3/frame-3--asset-step2.webp"
 						alt=""
-						v-if="showBirdAway"
 						class="frame__asset--hover" />
 				</Transition>
 			</Frame>

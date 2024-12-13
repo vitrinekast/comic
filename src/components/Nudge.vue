@@ -4,7 +4,7 @@
 	import { ref, watchEffect } from "vue";
 
 	const props = defineProps({
-		nudge: { type: [String, Boolean], required: false },
+		nudge: { type: [String, Boolean], required: false, default: null },
 	});
 	let timeout;
 

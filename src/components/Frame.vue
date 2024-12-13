@@ -4,11 +4,11 @@
 	import Nudge from "./Nudge.vue";
 
 	const props = defineProps({
-		size: { type: String, required: false },
-		type: { type: String, required: false },
-		mask: { type: String, required: false },
-		nudge: { type: [String, Boolean], required: false },
-		outline: { type: String, required: false },
+		size: { type: String, required: false, default: null },
+		type: { type: String, required: false, default: null },
+		mask: { type: String, required: false, default: null },
+		nudge: { type: [String, Boolean], required: false, default: null },
+		outline: { type: String, required: false, default: null },
 	});
 
 	const outlineImg = ref();

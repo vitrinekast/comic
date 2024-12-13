@@ -95,12 +95,12 @@
 
 		<div class="sideburn">
 			<swiper-container
-				class="swiper-container sideburn__container"
 				ref="pageC"
+				class="swiper-container sideburn__container"
 				init="false">
 				<swiper-slide
-					class="slide--100"
 					v-if="!prikbordOpen"
+					class="slide--100"
 					:data-swiper-seen="activeIndex > 0">
 					<Page class="page--fullwidth">
 						<img
@@ -108,12 +108,12 @@
 							src="@assets/ch-1-p-2_frame_1/part1.webp"
 							alt="" />
 						<video
+							ref="coordVideo"
 							class="frame__video"
 							disablePictureInPicture
 							playsinline
 							muted
-							style="height: 90px"
-							ref="coordVideo">
+							style="height: 90px">
 							<source
 								src="@assets/ch-1-p-2_frame_1/animation.mov"
 								type='video/mp4; codecs="hvc1"' />
@@ -124,8 +124,8 @@
 					</Page>
 				</swiper-slide>
 				<swiper-slide
-					class="slide--auto"
 					v-if="!prikbordOpen"
+					class="slide--auto"
 					data-swiper-parallax
 					:data-swiper-seen="activeIndex > 1">
 					<Page class="page--fullwidth">
@@ -143,9 +143,9 @@
 					</Page>
 				</swiper-slide>
 				<swiper-slide
+					v-if="!prikbordOpen"
 					data-swiper-parallax
 					class="slide--auto background--base"
-					v-if="!prikbordOpen"
 					style="--delay: 0.5s; duration: 0.2s"
 					:data-swiper-seen="activeIndex > 2">
 					<Page class="page--fullwidth">
@@ -241,17 +241,17 @@
 								name="fade"
 								:duration="2000">
 								<nextPage
+									v-if="showNextPage"
 									to="/chapter-1/page-3"
-									:push="true"
-									v-if="showNextPage" />
+									:push="true" />
 							</Transition>
 						</div>
 					</Page>
 				</swiper-slide>
 			</swiper-container>
 			<Nudge
-				nudge="slide"
-				v-if="showNudge && !prikbordOpen" />
+				v-if="showNudge && !prikbordOpen"
+				nudge="slide" />
 		</div>
 	</main>
 </template>

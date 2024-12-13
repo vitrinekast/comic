@@ -12,7 +12,7 @@
 	const wiggle = ref(false);
 
 	const props = defineProps({
-		name: { type: String, required: false },
+		name: { type: String, required: false, default: "" },
 	});
 
 	const onClick = (e) => {

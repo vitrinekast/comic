@@ -29,7 +29,7 @@
 	const cursor = ref();
 	const progress = ref([]);
 	const topElement = ref(3);
-	const menuModel = defineModel();
+	const menuModel = defineModel<boolean>(false);
 
 	const mousePos = reactive({
 		top: 0,
@@ -88,17 +88,17 @@
 
 <template>
 	<div
-		class="menu__cursor"
-		:style="mousePos"
+		v-if="menuModel"
 		ref="cursor"
-		v-if="menuModel"></div>
+		class="menu__cursor"
+		:style="mousePos"></div>
 
 	<Lightbox @mousemove="onMouseMove" />
 
 	<Transition name="fade">
 		<div
-			class="menu__backdrop"
-			v-if="menuModel"></div>
+			v-if="menuModel"
+			class="menu__backdrop"></div>
 	</Transition>
 
 	<Transition
@@ -122,8 +122,8 @@
 						@click="onClick(item, index)" />
 
 					<Nudge
-						:nudge="'photo'"
-						v-if="index == 0 && progress.indexOf(item.src) != -1" />
+						v-if="index == 0 && progress.indexOf(item.src) != -1"
+						:nudge="'photo'" />
 				</div>
 
 				<div class="menu__frame static">
@@ -145,8 +145,8 @@
 				name="fade"
 				:duration="15000">
 				<div
-					class="menu__meter progress"
-					v-if="progress.length < 4">
+					v-if="progress.length < 4"
+					class="menu__meter progress">
 					<li
 						class="progress__inner"
 						:step="progress.length"></li>

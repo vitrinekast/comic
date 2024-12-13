@@ -20,6 +20,11 @@ swiper-slide,
 	flex-direction: column;
 }
 
+.slide--min-auto {
+	height: auto;
+	width: 100%;
+}
+
 .slide--auto {
 	height: auto;
 	width: 100%;

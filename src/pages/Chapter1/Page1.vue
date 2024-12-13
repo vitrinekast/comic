@@ -166,10 +166,10 @@
 			</swiper-slide>
 		</swiper-container>
 		<Nudge
-			nudge="slide"
-			v-if="showNudge" />
+			v-if="showNudge"
+			nudge="slide" />
 		<nextPage
-			to="/chapter-1/page-2"
-			v-if="brokenIces.length > 2" />
+			v-if="brokenIces.length > 2"
+			to="/chapter-1/page-2" />
 	</main>
 </template>

@@ -2,8 +2,8 @@
 	import { BEM } from "@/helpers/utils";
 
 	const props = defineProps({
-		type: { type: String, required: false },
-		size: { type: String, required: false },
+		type: { type: String, required: false, default: null },
+		size: { type: String, required: false, default: null },
 	});
 </script>
 
